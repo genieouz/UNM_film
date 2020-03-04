@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Details film</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <!-- <img src="assets/img/starwars.jpg" /> -->
+    <ion-img [src]="loadPosterFilm(film.poster_path)"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ film.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ film.overview }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

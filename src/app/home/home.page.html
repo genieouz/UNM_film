@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Films
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,19 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Films</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-item *ngFor="let film of films" (click)="openDetailsFilm(film)">
+      <ion-avatar slot="start">
+        <!-- <img src="assets/img/starwars.jpg" /> -->
+        <ion-img [src]="loadPosterFilm(film.poster_path)"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ film.title }}</h2>
+        <p>{{ film.overview }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
